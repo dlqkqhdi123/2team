@@ -17,5 +17,13 @@ const gnbWidth = gnb.getBoundingClientRect().width;
 hambugerBtn.addEventListener("click", function () {
   hambugerBtn.classList.toggle("active");
   gnb.classList.toggle("vh");
-  account.classList.toggle("active");
+  const activeCheck1 = gnb.classList;
+  const activeCheck2 = hambugerBtn.classList;
+  if (activeCheck1.contains("vh") && activeCheck2.contains("active")) {
+    setTimeout(() => {
+      account.classList.add("active");
+    }, 400);
+  } else {
+    account.classList.remove("active");
+  }
 });
