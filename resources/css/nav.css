@@ -38,6 +38,7 @@ li {
   margin: 0 auto;
   padding: 16px 8px;
   transition: all 0.1s linear;
+  backdrop-filter: blur(5px);
 }
 
 .navigation.active {
@@ -296,6 +297,10 @@ li {
 
 @media screen and (max-width: 1024px) {
   /* 헤더 시작 */
+  .navigation {
+    backdrop-filter: none;
+  }
+
   .gnb {
     position: fixed;
     right: -100%;
