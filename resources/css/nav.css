@@ -15,6 +15,7 @@ body {
   max-height: 100%;
   word-break: keep-all;
   font-family: "Noto Sans KR", sans-serif;
+  overflow-x: hidden;
 }
 
 a {
@@ -36,7 +37,7 @@ li {
   width: 100%;
   z-index: 100;
   margin: 0 auto;
-  padding: 16px 8px;
+  padding: 16px;
   transition: all 0.1s linear;
   backdrop-filter: blur(5px);
 }
@@ -45,7 +46,7 @@ li {
   background-color: #f2c301;
   color: #212212;
   z-index: 300;
-  padding: 8px;
+  padding: 6px 16px;
   border-radius: 0 0 20px 20px;
 }
 
@@ -82,9 +83,15 @@ li {
 
 .site_logo {
   /* 로고 결정시 아래 background-image삭제 */
-  background-image: url("../image/4.jpg");
-  width: 50px;
-  height: 50px;
+  width: 35px;
+  height: 35px;
+  filter: invert(99%) sepia(21%) saturate(0%) hue-rotate(304deg)
+    brightness(106%) contrast(100%);
+}
+
+.site_logo.active {
+  filter: invert(7%) sepia(9%) saturate(3276%) hue-rotate(25deg) brightness(97%)
+    contrast(87%);
 }
 
 .nav_left {
@@ -177,6 +184,16 @@ li {
   gap: 8px;
 }
 
+.log-out {
+  background-color: transparent;
+  border: none;
+  color: #fff;
+}
+
+.navigation.active .log-out {
+  color: #221212;
+}
+
 .hamburger-button {
   position: relative;
   transition: 0.3s ease-in-out;
@@ -231,10 +248,67 @@ li {
 
 /* 헤더 종료 */
 /* 메인 시작 */
+.modal {
+  position: absolute;
+  display: none;
+  justify-content: center;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  color: #fff;
+  align-items: stretch;
+  background-color: rgba(0, 0, 0, 0.4);
+}
 
+.modal_body {
+  position: absolute;
+  top: 50%;
+  width: 400px;
+  height: 200px;
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  background-color: #212212;
+  border-radius: 10px;
+  box-shadow: 0 2px 3px 0 rgba(34, 36, 38, 0.15);
+  border: 3px solid #f2c301;
+  transform: translateY(-50%);
+}
+
+.modal_top h2 {
+  font-size: 32px;
+  font-weight: bold;
+}
+
+.modal_btn_body {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.modal_btn {
+  padding: 4px 8px;
+  width: 25%;
+  border: none;
+  background-color: #f2c301;
+  color: #212212;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.modal_btn:active {
+  box-shadow: inset 0 0 0 3px rgba(34, 36, 38, 0.5);
+}
 /* 메인 종료 */
 
 /* footer 시작 */
+footer {
+  width: 100vw;
+}
+
 .footer_wrap {
   width: 100%;
   height: 20%;
@@ -246,9 +320,15 @@ li {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 16px 24px;
+  padding: 16px 32px 24px 8px;
   border-bottom: 2px solid gray;
   color: #212212;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  opacity: 0.5;
 }
 
 .inquiry {
@@ -269,14 +349,9 @@ li {
   width: 100%;
   flex-direction: column;
   justify-content: space-between;
-  padding: 16px 32px 24px 32px;
+  padding: 16px 32px 24px 40px;
   color: #212212;
   gap: 15px;
-}
-
-.logo {
-  width: 100px;
-  height: 100px;
 }
 
 .footer_bottom a {
@@ -378,6 +453,14 @@ li {
   }
 
   .account.active a {
+    color: #fff;
+    padding: 1rem 3rem;
+    border: 3px solid #fff;
+    border-radius: 45%;
+    font-weight: 700;
+  }
+
+  .log-out {
     color: #fff;
     padding: 1rem 3rem;
     border: 3px solid #fff;
