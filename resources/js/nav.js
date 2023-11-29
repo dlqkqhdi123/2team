@@ -33,8 +33,10 @@ hambugerBtn.addEventListener("click", function () {
 });
 
 // 로그아웃
+const stop = document.querySelector("body");
 const logOut = document.querySelector("#log-out");
 const modal = document.querySelector(".modal");
+const modalBody = document.querySelector(".modal_body");
 const btnOpenModal = document.querySelector(".btn-open-modal");
 const logOutYes = document.querySelector("#modalTrue");
 const logOutNo = document.querySelector("#modalFalse");
@@ -42,6 +44,16 @@ const logOutNo = document.querySelector("#modalFalse");
 function logOut_btn() {
   logOut.addEventListener("click", function () {
     modal.style.display = "flex";
+    modal.style.zIndex = 100;
+    modalBody.style.zIndex = 200;
+    stop.classList.add("break");
+  });
+}
+
+function closeModal() {
+  modal.addEventListener("click", function () {
+    modal.style.display = "none";
+    stop.classList.remove("break");
   });
 }
 
@@ -54,6 +66,7 @@ function log_out() {
 function log_out_cancle() {
   logOutNo.addEventListener("click", function () {
     modal.style.display = "none";
+    stop.classList.remove("break");
   });
 }
 console.log(logOutNo);
