@@ -69,4 +69,3 @@ function log_out_cancle() {
     stop.classList.remove("break");
   });
 }
-console.log(logOutNo);
