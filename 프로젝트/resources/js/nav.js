@@ -59,7 +59,7 @@ function closeModal() {
 
 function log_out() {
   logOutYes.addEventListener("click", function () {
-    location.href = "index.html";
+    location.href = "../../index.html";
   });
 }
 
