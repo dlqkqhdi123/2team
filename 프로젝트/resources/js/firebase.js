@@ -1,4 +1,4 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-app.js";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
 import {
   getFirestore,
   collection,
@@ -10,21 +10,21 @@ import {
   deleteDoc,
   updateDoc,
   deleteField,
-} from "https://www.gstatic.com/firebasejs/10.6.0/firebase-firestore.js";
-import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.6.0/firebase-analytics.js";
+} from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+// import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDqURFWepmS2iVbApVUmBQNWgirojWwQKM",
-  authDomain: "md-project-ef43a.firebaseapp.com",
-  projectId: "md-project-ef43a",
-  storageBucket: "md-project-ef43a.appspot.com",
-  messagingSenderId: "974099556210",
-  appId: "1:974099556210:web:a4810054b80f90c9815feb",
-  measurementId: "G-V1QZ8J8081",
+  apiKey: "AIzaSyAJhV_ftNH_AkA9c_TVqei9wPacHQmWoYY",
+  authDomain: "md-project-team2.firebaseapp.com",
+  projectId: "md-project-team2",
+  storageBucket: "md-project-team2.appspot.com",
+  messagingSenderId: "736372498794",
+  appId: "1:736372498794:web:0c59c5c64abdbc86008513",
+  measurementId: "G-WNP30PS0DL",
 };
 
 const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+// const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
 async function getDatas(collectionName) {
