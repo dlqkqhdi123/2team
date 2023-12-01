@@ -26,7 +26,7 @@ hambugerBtn.addEventListener("click", function () {
   if (activeCheck1.contains("vh") && activeCheck2.contains("active")) {
     setTimeout(() => {
       account.classList.add("active");
-    }, 400);
+    }, 300);
   } else {
     account.classList.remove("active");
   }
@@ -42,31 +42,21 @@ const logOutYes = document.querySelector("#modalTrue");
 const logOutNo = document.querySelector("#modalFalse");
 
 function logOut_btn() {
-  logOut.addEventListener("click", function () {
-    modal.style.display = "flex";
-    modal.style.zIndex = 100;
-    modalBody.style.zIndex = 200;
-    stop.classList.add("break");
-  });
+  modal.style.display = "flex";
+  modal.style.zIndex = 10000;
+  modalBody.style.zIndex = 200;
+  stop.classList.add("break");
 }
 
 function closeModal() {
-  modal.addEventListener("click", function () {
-    modal.style.display = "none";
-    stop.classList.remove("break");
-  });
+  modal.style.display = "none";
 }
 
 function log_out() {
-  logOutYes.addEventListener("click", function () {
-    location.href = "index.html";
-  });
+  location.href = "../../index.html";
 }
 
 function log_out_cancle() {
-  logOutNo.addEventListener("click", function () {
-    modal.style.display = "none";
-    stop.classList.remove("break");
-  });
+  modal.style.display = "none";
+  stop.classList.remove("break");
 }
-console.log(logOutNo);

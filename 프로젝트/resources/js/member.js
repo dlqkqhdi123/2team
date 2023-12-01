@@ -35,7 +35,7 @@ const phoneNumberPattern = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/g;
 const passwordPattern = /^[A-Za-z0-9]{4,12}$/g;
 
 // 중복확인
-function member_id_ajax() {
+async function member_id_ajax() {
   const checkId = document.querySelector("#id").value;
   idAjax.addEventListener("click", function () {
     // console.log(!idPattern.test(checkId.value));
@@ -126,104 +126,103 @@ function checked() {
 }
 
 // 회원가입
-function submitCheck() {
-  // 정규식 input
-  const passwordVal = document.querySelector("#password").value;
-  // 아이디
-  if (memberId.value == "") {
-    alert("아이디를 입력해주세요.");
-    setTimeout(function () {
-      memberId.focus();
-      return false;
-    }, 5);
-  } else if (notOkId.classList.contains("show") == true) {
-    alert("중복확인을 해주세요.");
-    setTimeout(function () {
-      memberId.focus();
-      return false;
-    }, 5);
-    // 비밀번호
-  } else if (password.value == "") {
-    alert("비밀번호를 입력해주세요.");
-    setTimeout(function () {
-      password.focus();
-      return false;
-    }, 5);
-  } else if (password.value != passwordCheck.value) {
-    alert("비밀번호가 일치하지 않습니다.");
-    setTimeout(function () {
-      passwordCheck.focus();
-      return false;
-    }, 5);
-  } else if (!passwordPattern.test(passwordVal)) {
-    alert("사용하실 수 없는 비밀번호입니다.");
-    setTimeout(function () {
-      password.focus();
-      return false;
-    }, 5);
-  } else if (memberId.value == password.value) {
-    alert("아이디와 비밀번호는 다르게 해주세요.");
-    setTimeout(function () {
-      memberId.focus();
-      return false;
-    }, 5);
-    // 이름
-  } else if (memberName.value == "") {
-    alert("이름을 입력해주세요.");
-    setTimeout(function () {
-      memberName.focus();
-      return false;
-    }, 5);
-    // 이메일
-  } else if (firstMail.value == "") {
-    alert("이메일을 입력해주세요.");
-    setTimeout(function () {
-      firstMail.focus();
-      return false;
-    }, 5);
-  } else if (selected.value == "") {
-    alert("이메일을 선택해주세요.");
-    setTimeout(function () {
-      selected.focus();
-      return false;
-    }, 5);
-  } else if (selected.value == "other") {
-    if (self.value == "") {
-      alert("이메일을 입력해주세요.");
-      setTimeout(function () {
-        self.focus();
-        return false;
-      }, 5);
-    }
-    // 연락처
-  } else if (phoneNum.value == "") {
-    alert("연락처를 입력해주세요.");
-    setTimeout(function () {
-      phoneNum.focus();
-      return false;
-    }, 5);
-  } else if (completeBtn.disabled != true) {
-    alert("인증을 완료해주세요.");
-    setTimeout(function () {
-      numberInput.focus();
-      return false;
-    }, 5);
+// function submitCheck() {
+//   // 정규식 input
+//   const passwordVal = document.querySelector("#password").value;
+//   // 아이디
+//   if (memberId.value == "") {
+//     alert("아이디를 입력해주세요.");
+//     setTimeout(function () {
+//       memberId.focus();
+//       return false;
+//     }, 5);
+//   } else if (notOkId.classList.contains("show") == true) {
+//     alert("중복확인을 해주세요.");
+//     setTimeout(function () {
+//       memberId.focus();
+//       return false;
+//     }, 5);
+//     // 비밀번호
+//   } else if (password.value == "") {
+//     alert("비밀번호를 입력해주세요.");
+//     setTimeout(function () {
+//       password.focus();
+//       return false;
+//     }, 5);
+//   } else if (password.value != passwordCheck.value) {
+//     alert("비밀번호가 일치하지 않습니다.");
+//     setTimeout(function () {
+//       passwordCheck.focus();
+//       return false;
+//     }, 5);
+//   } else if (!passwordPattern.test(passwordVal)) {
+//     alert("사용하실 수 없는 비밀번호입니다.");
+//     setTimeout(function () {
+//       password.focus();
+//       return false;
+//     }, 5);
+//   } else if (memberId.value == password.value) {
+//     alert("아이디와 비밀번호는 다르게 해주세요.");
+//     setTimeout(function () {
+//       memberId.focus();
+//       return false;
+//     }, 5);
+//     // 이름
+//   } else if (memberName.value == "") {
+//     alert("이름을 입력해주세요.");
+//     setTimeout(function () {
+//       memberName.focus();
+//       return false;
+//     }, 5);
+//     // 이메일
+//   } else if (firstMail.value == "") {
+//     alert("이메일을 입력해주세요.");
+//     setTimeout(function () {
+//       firstMail.focus();
+//       return false;
+//     }, 5);
+//   } else if (selected.value == "") {
+//     alert("이메일을 선택해주세요.");
+//     setTimeout(function () {
+//       selected.focus();
+//       return false;
+//     }, 5);
+//   } else if (selected.value == "other") {
+//     if (self.value == "") {
+//       alert("이메일을 입력해주세요.");
+//       setTimeout(function () {
+//         self.focus();
+//         return false;
+//       }, 5);
+//     }
+//     // 연락처
+//   } else if (phoneNum.value == "") {
+//     alert("연락처를 입력해주세요.");
+//     setTimeout(function () {
+//       phoneNum.focus();
+//       return false;
+//     }, 5);
+//   } else if (completeBtn.disabled != true) {
+//     alert("인증을 완료해주세요.");
+//     setTimeout(function () {
+//       numberInput.focus();
+//       return false;
+//     }, 5);
 
-    // 마무리
-  } else if (addr.value == "") {
-    alert("주소를 입력해주세요.");
-    setTimeout(function () {
-      addr.focus();
-      return false;
-    }, 5);
-  } else {
-    alert("회원가입되셨습니다.");
-    setTimeout(function () {
-      location.href = "../../index_login.html";
-      return true;
-    }, 5);
-  }
-}
+//     // 마무리
+//   } else if (addr.value == "") {
+//     alert("주소를 입력해주세요.");
+//     setTimeout(function () {
+//       addr.focus();
+//       return false;
+//     }, 5);
+//   } else {
+//     alert("회원가입되셨습니다.");
+//     setTimeout(function () {
+//       return true;
+//     }, 5);
+//   }
+// }
 
 // 아이디찾기
 function submitCheckId() {
