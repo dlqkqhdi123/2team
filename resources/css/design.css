@@ -306,7 +306,7 @@ figure {
 .icon-pics {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
-  justify-content: center;
+  justify-items: center;
   gap: 10px;
   width: 100%;
   object-fit: cover;
@@ -341,6 +341,7 @@ figure {
   margin: 6rem 10rem;
   border-radius: 1rem;
   font-size: 30px;
+  min-width: 380px;
 }
 
 .icon-textcon p {
@@ -349,32 +350,34 @@ figure {
 
 /* 메인 종료 */
 
-@media screen and (max-width: 1200px) {
-  /* 칼라 종료 */
-  .icon-pics {
-    grid-template-columns: repeat(2, 1fr);
-  }
-  .icon-pic {
-    width: 150px;
-  }
-}
-
 @media screen and (min-width: 1201px) {
-  /* 칼라 */
-  .design-mode.dr {
-    grid-template-columns: repeat(1, 1fr);
-  }
-
-  .design-mean {
-    grid-template-rows: 1fr 1fr;
-    grid-template-columns: repeat(1, 1fr);
-  }
-
   /* 칼라 종료 */
+  
   .icon-pics {
     grid-template-columns: repeat(4, 1fr);
   }
   .icon-pic {
     width: 100px;
   }
+}
+
+@media screen and (max-width: 1200px) {
+  /* 칼라 */
+  .design-mode.dr {
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .design-mean {
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(1, 1fr);
+  }
+  
+  .icon-pics {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .icon-pic {
+    width: 150px;
+  }
+
+
 }
