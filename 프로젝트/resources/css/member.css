@@ -53,10 +53,6 @@ th {
   display: none;
 }
 
-.show {
-  display: block;
-}
-
 .wrapper_middle {
   width: 100%;
   display: flex;

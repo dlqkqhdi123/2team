@@ -12,9 +12,7 @@ const pass = document.querySelector(".pass");
 const addr = document.querySelector("#sample6_address");
 
 // 중복확인 관련 변수 선언
-const idAjax = document.querySelector("#id_ajax");
-const okId = document.querySelector(".ok");
-const notOkId = document.querySelector(".notOk");
+
 // 이메일 관련 변수 선언
 const selected = document.querySelector("#tmp_mail");
 const self = document.querySelector("#email2");
@@ -30,41 +28,40 @@ let min;
 let sec;
 
 // 정규식
-const idPattern = /^[A-Za-z0-9]{4,16}$/g;
+
 const phoneNumberPattern = /^(01[016789]{1})-?[0-9]{3,4}-?[0-9]{4}$/g;
 const passwordPattern = /^[A-Za-z0-9]{4,12}$/g;
 
+const idAjax = document.querySelector("#id_ajax");
 // 중복확인
-async function member_id_ajax() {
-  const checkId = document.querySelector("#id").value;
-  idAjax.addEventListener("click", function () {
-    // console.log(!idPattern.test(checkId.value));
-    // console.log(notOkId.classList.contains("show"));
-    if (memberId.value == "") {
-      alert("아이디를 입력해주세요.");
-      setTimeout(function () {
-        memberId.focus();
-        return false;
-      }, 5);
-    } else if (!idPattern.test(checkId)) {
-      notOkId.classList.remove("hidden");
-      notOkId.classList.add("show");
-      if (okId.classList.contains("show") == true) {
-        okId.classList.remove("show");
-        okId.classList.add("hidden");
-      }
-      return false;
-    } else {
-      okId.classList.remove("hidden");
-      okId.classList.add("show");
-      if (notOkId.classList.contains("show") == true) {
-        notOkId.classList.remove("show");
-        notOkId.classList.add("hidden");
-      }
-      return true;
-    }
-  });
-}
+// idAjax.addEventListener("click", function () {
+//   const checkId = document.querySelector("#id").value;
+//   // console.log(!idPattern.test(checkId.value));
+//   // console.log(notOkId.classList.contains("show"));
+//   if (memberId.value == "") {
+//     alert("아이디를 입력해주세요.");
+//     setTimeout(function () {
+//       memberId.focus();
+//       return false;
+//     }, 5);
+//   } else if (!idPattern.test(checkId)) {
+//     notOkId.classList.remove("hidden");
+//     notOkId.classList.add("show");
+//     if (okId.classList.contains("show") == true) {
+//       okId.classList.remove("show");
+//       okId.classList.add("hidden");
+//     }
+//     return false;
+//   } else {
+//     okId.classList.remove("hidden");
+//     okId.classList.add("show");
+//     if (notOkId.classList.contains("show") == true) {
+//       notOkId.classList.remove("show");
+//       notOkId.classList.add("hidden");
+//     }
+//     return true;
+//   }
+// });
 
 // 메일 도메인 선택
 selected.addEventListener("change", function (e) {

@@ -27,10 +27,12 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
+
 async function getDatas(collectionName) {
   const querySnapshot = await getDocs(collection(db, collectionName));
   return querySnapshot;
 }
+
 
 async function addDatas(collectionName, dataObj) {
   // 문서ID 부여
@@ -40,6 +42,8 @@ async function addDatas(collectionName, dataObj) {
   await addDoc(collection(db, collectionName), dataObj);
 }
 
+
+// 문서 삭제
 async function deleteDatas(collectionName, docId) {
   await deleteDoc(doc(db, collectionName, docId));
 }
