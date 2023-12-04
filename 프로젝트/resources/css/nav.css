@@ -340,19 +340,6 @@ footer {
   opacity: 0.5;
 }
 
-.inquiry {
-  padding: 16px 24px;
-  background-color: #4b4b4b;
-  font-weight: 700;
-  font-size: 24px;
-  border-radius: 16px;
-  cursor: pointer;
-}
-
-.inquiry a {
-  color: #fff !important;
-}
-
 .footer_bottom {
   display: flex;
   width: 100%;
