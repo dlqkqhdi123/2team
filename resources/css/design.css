@@ -23,26 +23,11 @@ li {
   list-style: none;
 }
 
-/* 디자인 메인 시작 */
-#DContainer {
+/* main */
+#main>img{
   width: 100%;
-  margin: 30px auto;
-  padding: 8rem;
-  display: flex;
-  grid-template-columns: 1fr 3fr;
-  gap: 3rem;
-}
-
-#DContainer li {
-  list-style: decimal;
-}
-
-#DContainer li li {
-  list-style: disc;
-}
-
-#DContainer a {
-  color: #212212;
+  height: 500px;
+  object-fit: cover;
 }
 
 /* 모달 */
@@ -101,6 +86,29 @@ li {
   box-shadow: inset 0 0 0 3px rgba(34, 36, 38, 0.5);
 }
 /* 모달종료 */
+
+/* 디자인 메인 시작 */
+#DContainer {
+  width: 100%;
+  margin: 30px auto;
+  padding: 5rem;
+  display: flex;
+  gap: 3rem;
+}
+
+#DContainer li {
+  list-style: decimal;
+  margin-left: -0px;
+}
+
+#DContainer li li {
+  list-style: disc;
+}
+
+#DContainer a {
+  color: #212212;
+}
+
 
 /* 사이드 좌측 바 */
 .sideLeftBar {
@@ -195,10 +203,15 @@ li {
 /* 사이드 좌측 바 종료 */
 /* 디자인 */
 .DBoxContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .designBox {
-  width: 100%;
+  width: 90%;
+  min-width: 500px;
   background-color: #dddddd;
   color: #212212;
   border-radius: 2rem;
@@ -218,7 +231,8 @@ li {
 
 .designBox img {
   object-fit: cover;
-  width: 80%;
+  width: 100%;
+  max-width: 850px;
 }
 
 figure {
@@ -258,7 +272,7 @@ figure {
 }
 
 .mean.yellow {
-  background-color: yellow;
+  background-color: rgb(255, 238, 0);
 }
 
 .mean.green {
@@ -278,7 +292,7 @@ figure {
 }
 
 .mean.brown {
-  background-color: brown;
+  background-color: rgb(129, 51, 48);
 }
 
 .mean.white {
@@ -291,12 +305,16 @@ figure {
 }
 
 .mean.black {
-  background-color: black;
+  background-color: rgb(22, 22, 22);
 }
 
 .mean.down {
-  filter: brightness(80%);
-}
+  filter: sepia(20%) brightness(90%) saturate(50%) ; 
+} 
+
+.mean.up {
+  filter: brightness(120%) saturate(130%) ; 
+} 
 
 .fontList img {
   background-color: white;
@@ -313,24 +331,26 @@ figure {
 }
 
 .imgFont,
-.d-color {
+.d-color,
+.icon-textcom {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   object-fit: cover;
+  padding-right: 2rem;
 }
 
 .imgFontM {
-  padding: 1rem;
   overflow: hidden;
+  padding: 1rem;
 }
 
 .icon-pic img {
   width: 100%;
 }
 
-.icon-textcon {
+.icon-textconM{
   display: flex;
   justify-content: center;
   align-items: center;
@@ -338,7 +358,7 @@ figure {
   flex-wrap: wrap;
   background-color: white;
   padding: 2rem;
-  margin: 6rem 10rem;
+  margin: 4rem auto;
   border-radius: 1rem;
   font-size: 30px;
   min-width: 380px;
@@ -352,7 +372,7 @@ figure {
 
 @media screen and (min-width: 1201px) {
   /* 칼라 종료 */
-  
+
   .icon-pics {
     grid-template-columns: repeat(4, 1fr);
   }
@@ -366,18 +386,22 @@ figure {
   .design-mode.dr {
     grid-template-columns: repeat(1, 1fr);
   }
-  
+
   .design-mean {
     grid-template-rows: 1fr 1fr;
     grid-template-columns: repeat(1, 1fr);
   }
-  
+
   .icon-pics {
     grid-template-columns: repeat(2, 1fr);
   }
+
   .icon-pic {
     width: 150px;
   }
 
-
+  .color-meaning {
+    display: flex;
+    justify-content: center;
+  }
 }
