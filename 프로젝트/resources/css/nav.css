@@ -406,7 +406,7 @@ footer {
     background-size: cover;
     filter: grayscale(1.8);
     z-index: 500;
-    padding: 0;
+    padding-top: 25%;
   }
 
   .gnb.vh a {
