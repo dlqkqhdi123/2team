@@ -119,7 +119,7 @@ li {
   gap: 30px;
   height: 100%;
   background-color: inherit;
-  padding-left: 16px;
+  /* padding-top: 16px; */
   margin: 0;
 }
 
@@ -138,15 +138,17 @@ li {
 .gmain {
   position: relative;
   height: 60px;
-  padding-top: 16px;
+  padding-top: 8px;
 }
 
 .gmain > a {
   height: 100%;
+  width: 100px;
+  text-align: center;
 }
 
-.gmain:hover .gsub {
-  display: block;
+.navigation.active .gmain {
+  padding-top: 8px;
 }
 
 .gsub {
@@ -160,13 +162,13 @@ li {
   box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
   display: none;
   top: 60px;
-  right: -20%;
+  /* right: -8%; */
   z-index: 100;
 }
 
-.gmain:nth-child(2) .gsub {
-  left: -60%;
-}
+/* .gmain:nth-child(2) .gsub {
+  left: -10%;
+} */
 
 .gsub a {
   border-bottom: 1px solid #ccc;
@@ -183,6 +185,10 @@ li {
 
 .gsub li:last-of-type a {
   border-bottom: none;
+}
+
+.navigation.active .gsub {
+  top: 55px;
 }
 
 .account {
@@ -406,7 +412,8 @@ footer {
     background-size: cover;
     filter: grayscale(1.8);
     z-index: 500;
-    padding: 0;
+    padding-top: 25%;
+    /* padding: 0; */
   }
 
   .gnb.vh a {

@@ -10,6 +10,8 @@ import {
   deleteDoc,
   updateDoc,
   deleteField,
+  where,
+  query,
 } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
 // import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-analytics.js";
 
@@ -27,12 +29,18 @@ const app = initializeApp(firebaseConfig);
 // const analytics = getAnalytics(app);
 const db = getFirestore(app);
 
-
 async function getDatas(collectionName) {
   const querySnapshot = await getDocs(collection(db, collectionName));
+
   return querySnapshot;
 }
 
+async function idDatas(collectionName, checkId) {
+  const Snapshot = await getDocs(
+    query(collection(db, collectionName), where("memberId", "==", checkId))
+  );
+  return Snapshot.size;
+}
 
 async function addDatas(collectionName, dataObj) {
   // 문서ID 부여
@@ -41,7 +49,6 @@ async function addDatas(collectionName, dataObj) {
   // 문서ID 자동
   await addDoc(collection(db, collectionName), dataObj);
 }
-
 
 // 문서 삭제
 async function deleteDatas(collectionName, docId) {
@@ -71,4 +78,5 @@ export {
   updateDoc,
   deleteField,
   updateDatas,
+  idDatas,
 };

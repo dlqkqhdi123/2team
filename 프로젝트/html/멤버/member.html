@@ -408,6 +408,7 @@
       updateDoc,
       deleteField,
       updateDatas,
+      idDatas,
     } = firebase;
     const noNo = document.querySelector(".nono");
     const okId = document.querySelector(".ok");
@@ -427,52 +428,54 @@
           memberAddr,
         } = doc.data();
         const chId = doc.data();
-        console.log(chId["memberId"]);
-        const idArr = [];
-        idArr.push(chId);
-        console.log(idArr);
+        // console.log(chId["memberId"]);
+        // console.log(Object.values(chId["memberId"]));
+        // const idArr = [];
+        // idArr.push(chId["memberId"]);
+        // console.log(idArr);
+
         // 중복확인
         idAjax.addEventListener("click", function () {
           const idPattern = /^[a-zA-Z][0-9a-zA-Z]{4,16}$/;
           const focusID = document.querySelector("#id");
           const checkId = document.querySelector("#id").value;
-          // console.log(idPattern.test(checkId));
-          console.log(checkId != chId["memberId"]);
-
-          if (checkId == "") {
-            alert("아이디를 입력해주세요.");
-            setTimeout(function () {
-              focusID.focus();
-            }, 5);
-          } else if (!idPattern.test(checkId) == true) {
-            notOkId.classList.remove("hidden");
-            if (
-              // 사용불가능한이 떠있을때 사용가능과 중복아이디가 안뜨게
-              notOkId.classList.contains("hidden") == false
-            ) {
-              noNo.classList.add("hidden");
-              okId.classList.add("hidden");
+          let isExist = 0;
+          idDatas("member", checkId).then((result) => {
+            isExist = result;
+            if (checkId == "") {
+              alert("아이디를 입력해주세요.");
+              setTimeout(function () {
+                focusID.focus();
+              }, 5);
+            } else if (!idPattern.test(checkId) == true) {
               notOkId.classList.remove("hidden");
-            }
-          } else if (checkId == chId["memberId"]) {
-            noNo.classList.remove("hidden");
-            if (noNo.classList.contains("hidden") == false) {
-              console.log("3");
-              okId.classList.add("hidden");
-              notOkId.classList.add("hidden");
+              if (
+                // 사용불가능한이 떠있을때 사용가능과 중복아이디가 안뜨게
+                notOkId.classList.contains("hidden") == false
+              ) {
+                noNo.classList.add("hidden");
+                okId.classList.add("hidden");
+                notOkId.classList.remove("hidden");
+              }
+            } else if (checkId == chId["memberId"]) {
               noNo.classList.remove("hidden");
+              if (noNo.classList.contains("hidden") == false) {
+                console.log("3");
+                okId.classList.add("hidden");
+                notOkId.classList.add("hidden");
+                noNo.classList.remove("hidden");
+              }
+            } else if (!idPattern.test(checkId) == false && isExist == 0) {
+              okId.classList.remove("hidden");
+              console.log("그만");
+              if (okId.classList.contains("hidden") == false) {
+                notOkId.classList.add("hidden");
+                noNo.classList.add("hidden");
+              }
             }
-          } else if (
-            !idPattern.test(checkId) == false &&
-            checkId != chId["memberId"]
-          ) {
-            okId.classList.remove("hidden");
-            console.log("그만");
-            if (okId.classList.contains("hidden") == false) {
-              notOkId.classList.add("hidden");
-              noNo.classList.add("hidden");
-            }
-          }
+          });
+          // console.log(idPattern.test(checkId));
+          // console.log(checkId != chId["memberId"]);
         });
       });
     }
