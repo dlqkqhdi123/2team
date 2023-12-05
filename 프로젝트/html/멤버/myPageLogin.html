@@ -26,7 +26,7 @@
           <div class="site">
             <a href="../../index_login.html" class="site_name">
               <img
-                src="../../resources/image/logo.png"
+                src="../../resources/img/logo.png"
                 alt="사이트로고"
                 class="site_logo"
               />
@@ -50,9 +50,9 @@
                 <div class="item">디자인</div>
               </a>
               <ul class="gsub">
-                <li><a href="">Color</a></li>
-                <li><a href="">Font</a></li>
-                <li><a href="">Icon </a></li>
+                <li><a href="../디자인/design-color.html">Color</a></li>
+                <li><a href="../디자인/design-font.html">Font</a></li>
+                <li><a href="../디자인/design-icon.html">Icon </a></li>
               </ul>
             </li>
             <li class="gmain">
@@ -63,11 +63,6 @@
             <li class="gmain">
               <a href="">
                 <div class="item">예제</div>
-              </a>
-            </li>
-            <li class="gmain">
-              <a href="">
-                <div class="item">자유게시판</div>
               </a>
             </li>
           </ul>
@@ -122,7 +117,7 @@
       </div>
       <!-- 모달 종료 이 아래로 붙여넣을것 -->
       <img
-        src="../../resources/image/마이페이지.jpg"
+        src="../../resources/img/마이페이지.jpg"
         alt="마이페이지"
         style="width: 100%; height: 500px"
       />
@@ -154,7 +149,6 @@
                   <input
                     type="button"
                     class="member-btn"
-                    onclick="member_id_ajax()"
                     id="id_ajax"
                     value="중복확인"
                   />
@@ -341,14 +335,10 @@
           <div class="footer-top">
             <div class="bottom_logo">
               <img
-                src="../../resources/image/logo.png"
+                src="../../resources/img/logo.png"
                 alt="사이트로고"
                 class="logo"
               />
-            </div>
-            <div class="inquiry">
-              <!-- 문의 페이지로 변경 -->
-              <a href="#" class="footer-btn"> 문의하기</a>
             </div>
           </div>
           <div class="bottom_address">
@@ -371,6 +361,7 @@
   </body>
   <script src="../../resources/js/nav.js"></script>
   <script src="../../resources/js/member.js"></script>
+  <!-- 제작할 페이지의 스크립트 -->
   <script>
     function sample6_execDaumPostcode() {
       new daum.Postcode({
@@ -422,7 +413,6 @@
       }).open();
     }
   </script>
-  <!-- 제작할 페이지의 스크립트 -->
   <script type="module">
     import * as firebase from "../../resources/js/firebase.js";
     const {
@@ -438,12 +428,16 @@
       updateDoc,
       deleteField,
       updateDatas,
+      idDatas,
     } = firebase;
+    const noNo = document.querySelector(".nono");
+    const okId = document.querySelector(".ok");
+    const notOkId = document.querySelector(".notOk");
+    const idAjax = document.querySelector("#id_ajax");
 
     async function getMembers() {
       const snapshot = await getDatas("member");
       snapshot.forEach((doc) => {
-        // console.log(doc.data());
         const {
           memberId,
           memberPass,
@@ -453,9 +447,60 @@
           memberTel,
           memberAddr,
         } = doc.data();
+        const chId = doc.data();
+        // console.log(chId["memberId"]);
+        // console.log(Object.values(chId["memberId"]));
+        // const idArr = [];
+        // idArr.push(chId["memberId"]);
+        // console.log(idArr);
+
+        // 중복확인
+        idAjax.addEventListener("click", function () {
+          const idPattern = /^[a-zA-Z][0-9a-zA-Z]{4,16}$/;
+          const focusID = document.querySelector("#id");
+          const checkId = document.querySelector("#id").value;
+          let isExist = 0;
+          idDatas("member", checkId).then((result) => {
+            isExist = result;
+            if (checkId == "") {
+              alert("아이디를 입력해주세요.");
+              setTimeout(function () {
+                focusID.focus();
+              }, 5);
+            } else if (!idPattern.test(checkId) == true) {
+              notOkId.classList.remove("hidden");
+              if (
+                // 사용불가능한이 떠있을때 사용가능과 중복아이디가 안뜨게
+                notOkId.classList.contains("hidden") == false
+              ) {
+                noNo.classList.add("hidden");
+                okId.classList.add("hidden");
+                notOkId.classList.remove("hidden");
+              }
+            } else if (checkId == chId["memberId"]) {
+              noNo.classList.remove("hidden");
+              if (noNo.classList.contains("hidden") == false) {
+                console.log("3");
+                okId.classList.add("hidden");
+                notOkId.classList.add("hidden");
+                noNo.classList.remove("hidden");
+              }
+            } else if (!idPattern.test(checkId) == false && isExist == 0) {
+              okId.classList.remove("hidden");
+              console.log("그만");
+              if (okId.classList.contains("hidden") == false) {
+                notOkId.classList.add("hidden");
+                noNo.classList.add("hidden");
+              }
+            }
+          });
+          // console.log(idPattern.test(checkId));
+          // console.log(checkId != chId["memberId"]);
+        });
       });
     }
     getMembers();
+    // 수정하기로 변경
     submit.addEventListener("click", function () {
       const memberInfo = {
         memberId: document.querySelector("input[name=id]").value,
@@ -557,7 +602,7 @@
           return false;
         }, 5);
       } else {
-        alert("변경되었습니다.");
+        alert("수정되셨습니다.");
         addDatas("member", memberInfo).then(
           () => (window.location.href = "../../index_login.html")
         );

@@ -41,17 +41,19 @@ li {
   width: 100%;
   z-index: 100;
   margin: 0 auto;
-  padding: 16px;
-  transition: all 0.1s linear;
+  padding: 0 32px;
+  transition: all 0.3s ease;
   backdrop-filter: blur(5px);
+  height: 8%;
 }
 
 .navigation.active {
   background-color: #f2c301;
   width: 100%;
+  height: 7%;
   color: #212212;
   z-index: 300;
-  padding: 6px 16px;
+  padding: 0 32px;
   border-radius: 0 0 20px 20px;
 }
 
@@ -115,10 +117,10 @@ li {
   display: flex;
   align-items: center;
   gap: 30px;
-  height: 119px;
+  height: 100%;
   background-color: inherit;
-  padding-top: 16px;
-  margin-left: 16px;
+  padding-left: 16px;
+  margin: 0;
 }
 
 .gnb a {
@@ -135,6 +137,8 @@ li {
 
 .gmain {
   position: relative;
+  height: 60px;
+  padding-top: 16px;
 }
 
 .gmain > a {
@@ -155,8 +159,8 @@ li {
   border-radius: 6px;
   box-shadow: 2px 5px 8px rgba(0, 0, 0, 0.2);
   display: none;
-  top: 25px;
-  right: -16%;
+  top: 60px;
+  right: -20%;
   z-index: 100;
 }
 
@@ -336,19 +340,6 @@ footer {
   opacity: 0.5;
 }
 
-.inquiry {
-  padding: 16px 24px;
-  background-color: #4b4b4b;
-  font-weight: 700;
-  font-size: 24px;
-  border-radius: 16px;
-  cursor: pointer;
-}
-
-.inquiry a {
-  color: #fff !important;
-}
-
 .footer_bottom {
   display: flex;
   width: 100%;
@@ -402,7 +393,7 @@ footer {
     background-size: cover;
     filter: grayscale(1.8);
     z-index: 500;
-    padding: 0;
+    padding-top: 25%;
   }
 
   .gnb.vh a {
