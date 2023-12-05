@@ -5,6 +5,9 @@ main {
 .all_container {
   padding: 16px;
   position: relative;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 100px;
 }
 
 .head_list h3 {
@@ -13,11 +16,12 @@ main {
 
 .head_continer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  width: 100%;
 }
 
 .head_list {
-  width: 25%;
+  width: 15%;
   gap: 8px;
   border: 1px solid #f2c301;
   border-radius: 8px;

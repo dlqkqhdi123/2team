@@ -3,7 +3,7 @@
   width: 60%;
   margin: 0 auto;
   border-radius: 16px;
-  margin-top: 50px;
+  margin-top: 100px;
 }
 /* 여기서부터 복사 */
 .head_list h3 {
@@ -12,7 +12,7 @@
 
 .head_continer {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .head_list {
