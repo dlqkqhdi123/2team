@@ -163,6 +163,31 @@
       </div>
       <!-- 슬라이더 종료 -->
       <!-- 애니매이션 우리는 시작 -->
+      <!-- 모달 -->
+      <div class="modal" onclick="closeModal()">
+        <div class="modal_body">
+          <div class="modal_top">
+            <h2>로그아웃하시겠습니까?</h2>
+          </div>
+          <div class="modal_btn_body">
+            <input
+              type="button"
+              class="modal_btn"
+              value="예"
+              id="modalTrue"
+              onclick="log_out()"
+            />
+            <input
+              type="button"
+              class="modal_btn"
+              value="아니요"
+              id="modalFalse"
+              onclick="log_out_cancle()"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 모달 종료 이 아래로 붙여넣을것 -->
       <div class="lg-main-container-2">
         <div class="lg-main-content-2">
           <p>

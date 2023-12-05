@@ -35,41 +35,47 @@
           </div>
           <ul class="gnb">
             <li class="gmain">
-              <a href="html.html">
+              <a href="html_login.html">
                 <div class="item">당신을 위한</div>
               </a>
               <ul class="gsub">
-                <li><a href="html.html">HTML</a></li>
-                <li><a href="css_for_you.html">CSS</a></li>
-                <li><a href="Javascript.html">JavaScript</a></li>
+                <li><a href="html_login.html">HTML</a></li>
+                <li><a href="css_for_you_login.html">CSS</a></li>
+                <li><a href="Javascript_login.html">JavaScript</a></li>
               </ul>
             </li>
             <li class="gmain">
-              <a href="../디자인/design-color.html">
+              <a href="../디자인/design-color_login.html">
                 <div class="item">디자인</div>
               </a>
               <ul class="gsub">
-                <li><a href="../디자인/design-color.html">Color</a></li>
-                <li><a href="../디자인/design-font.html">Font</a></li>
-                <li><a href="../디자인/design-icon.html">Icon </a></li>
+                <li><a href="../디자인/design-color_login.html">Color</a></li>
+                <li><a href="../디자인/design-font_login.html">Font</a></li>
+                <li><a href="../디자인/design-icon_login.html">Icon </a></li>
               </ul>
             </li>
             <li class="gmain">
-              <a href="../유용한자료/real.html">
+              <a href="../유용한자료/real_login.html">
                 <div class="item">유용한자료</div>
               </a>
             </li>
             <li class="gmain">
-              <a href="../예제/example.html">
+              <a href="../예제/example_login.html">
                 <div class="item">예제</div>
               </a>
             </li>
           </ul>
         </div>
         <div class="account">
-          <a href="../멤버/login.html" class="login"> 로그인 </a>
+          <a href="../멤버/myPageLogin.html" class="login"> 마이페이지 </a>
           <span class="middot"> &middot; </span>
-          <a href="../멤버/agree.html" class="sign_in"> 회원가입 </a>
+          <input
+            type="button"
+            class="log-out"
+            id="log-out"
+            value="로그아웃"
+            onclick="logOut_btn()"
+          />
         </div>
         <div class="hamburger-button">
           <span></span>
@@ -84,8 +90,31 @@
     <!-- main -->
     <main>
       <img src="../메인사진후보2.jpg" alt="" width="100%" height="500px" />
-      <!-- 메인 -->
-      <!-- 메인종료 -->
+      <!-- 모달시작 -->
+      <div class="modal">
+        <div class="modal_body">
+          <div class="modal_top">
+            <h2>로그아웃하시겠습니까?</h2>
+          </div>
+          <div class="modal_btn_body">
+            <input
+              type="button"
+              class="modal_btn"
+              value="예"
+              id="modalTrue"
+              onclick="log_out()"
+            />
+            <input
+              type="button"
+              class="modal_btn"
+              value="아니요"
+              id="modalFalse"
+              onclick="log_out_cancle()"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- 모달종료 -->
     </main>
     <!-- main -->
     <!-- footer -->
