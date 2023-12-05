@@ -1,0 +1,290 @@
+.foryou-container {
+  color: black;
+  width: 60%;
+  margin: 0 auto;
+}
+
+.foryou-title {
+  margin-top: 200px;
+  width: 100%;
+  height: 100%;
+  background-color: #f2c301;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+}
+
+.foryou-title h1 {
+  font-weight: 700;
+}
+
+.main-body {
+  margin-top: 50px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ccc;
+}
+
+.main-body h2 {
+  margin: 50px;
+  width: 90%;
+  padding: 20px;
+  background-color: #f2c201fd;
+}
+
+.main-title {
+  font-size: 50px;
+  font-weight: 700;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.main-box1 {
+  padding: 20px;
+  width: 100%;
+  height: 100%;
+}
+
+.main-box1 p {
+  padding: 30px;
+  font-size: 30px;
+  font-weight: 700;
+  background-color: #d4c37d;
+}
+
+.main-box2 {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.main-box2 h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f2c201fd;
+  width: 80%;
+  height: 80px;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 30px;
+}
+
+.box2-table {
+  width: 80%;
+  margin: 20px;
+}
+
+.box2-title {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.box2-title2 {
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.box2-tag {
+  width: 200px;
+  font-size: 30px;
+  font-weight: 700;
+}
+
+.box2-tag2 {
+  width: 200px;
+}
+
+td {
+  text-align: center;
+}
+
+.main-box2 td {
+  border: 1px solid black;
+  background-color: #d4c37d;
+  height: 35px;
+  font-weight: 500;
+}
+
+.main-box2 h3 {
+  margin: 30px;
+  font-weight: 700;
+  font-size: 40px;
+}
+
+.box2-sub {
+  padding: 30px auto;
+  border: 3px solid black;
+  font-weight: 700;
+}
+
+.a {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 50px;
+  background-color: #d4c37d;
+  box-shadow: 5px 5px;
+  margin: 20px;
+}
+
+.b {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 50px;
+  background-color: #d4c37d;
+  box-shadow: 5px 5px 5px;
+  margin: 20px;
+}
+.c {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 50px;
+  background-color: #d4c37d;
+  box-shadow: 5px 5px 5px 5px;
+  margin: 20px;
+}
+.d {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 50px;
+  background-color: #d4c37d;
+  box-shadow: 5px 5px 5px 5px gray;
+  margin: 20px;
+}
+.e {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 800px;
+  height: 50px;
+  background-color: #d4c37d;
+  box-shadow: 5px 5px 5px 5px gray inset;
+  margin: 20px;
+}
+
+.solid {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+
+.double {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px double;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+
+.groove {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px groove;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+.ridge {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px ridge;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+.inset {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px inset;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+.outset {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px outset;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+.dashed {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px;
+  border-style: dashed;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+.dotted {
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px;
+  border-style: dotted;
+  margin: 20px;
+  width: 800px;
+  height: 60px;
+  background-color: #d4c37d;
+}
+
+.table-tr {
+  font-size: 30px;
+  width: 80%;
+}
+
+.table-tr-small {
+  font-size: 25px;
+  width: 80%;
+}
+
+.table-tr-center {
+  font-size: 30px;
+  width: 50%;
+}
+/* 메인 종료 */
