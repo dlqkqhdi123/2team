@@ -39,13 +39,13 @@ li {
 
 .navigation.active {
   background-color: #f2c301;
-  color: #212212;
+  color: #222;
   z-index: 300;
   border-radius: 0 0 20px 20px;
 }
 
 .navigation.active a {
-  color: #212212;
+  color: #222;
 }
 
 .deactive {
@@ -76,7 +76,6 @@ li {
 }
 
 .site_logo {
-  /* 로고 결정시 아래 background-image삭제 */
   background-image: url("../image/4.jpg");
   width: 50px;
   height: 50px;
@@ -109,7 +108,7 @@ li {
 }
 
 .gnb.active a {
-  color: #212212;
+  color: #222;
 }
 
 .nav_left .gnb {
@@ -151,7 +150,7 @@ li {
   border-bottom: 1px solid #ccc;
   display: block;
   padding: 3px 8px;
-  color: #212212;
+  color: #222;
 }
 
 .gsub a:hover {
@@ -191,7 +190,7 @@ li {
 }
 
 .navigation.active .hamburger-button span {
-  background-color: #212212;
+  background-color: #222;
 }
 
 .hamburger-button.active {
@@ -226,148 +225,53 @@ li {
 
 /* 헤더 종료 */
 /* 메인 시작 */
-/*  LG css 시작 */
-.lg-container {
+.sub_content {
   display: flex;
-  justify-content: center;
-  gap: 100px;
-  width: 80%;
-  margin: 0px auto;
-}
-.lg-content {
-  font-size: small;
-  margin: 100px;
-}
-.lg-side-bar {
-  background-color: aqua;
-}
-.lg-side-content {
-  background-color: blue;
-}
-.lg-side-title {
-  background-color: red;
-}
-.lg-header {
   width: 100%;
-}
-.lg-maintext {
-  /* justify-content: space-around; */
-  gap: 40px;
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-}
-.lg-content > h3 {
-  padding: 2rem 0 2rem 0;
-}
-.lg-text {
-  display: flex;
-  align-items: center;
-  width: 500px;
-  height: 250px;
-  border: 1px solid #ffffff;
-  border-radius: 8px;
-  color: #212212;
-  font-weight: bold;
-  margin: 10px;
-  padding-left: 30px;
-  gap: 10px;
+  padding: 16px;
+  gap: 16px;
 }
 
-.lg-text:hover a {
-  color: #212212;
-}
-.lg-clickimg {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 10px;
-  font-weight: bold;
-}
-
-.lg-box {
-  padding: 10px;
-  margin: 10px;
-  color: #212212;
-}
-.lg-text img {
+.sub_content_img {
   width: 200px;
   height: 200px;
-  object-fit: cover;
 }
 
-.lg-text:hover {
-  background-color: #f2c301;
-}
-
-.lg-hover:hover {
-  background-color: #dddddd;
-}
-.liImage {
-  display: none;
-}
-.liImage.selected {
-  display: block;
-}
-/* LG 유용한자료 종료*/
-/* 게시판 시작 */
-.notice-board-container {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 80%;
-  margin: 0 auto;
-}
-.notice-board {
-  display: flex;
-  margin: 0 auto;
-  align-items: center;
+.content1 {
   width: 100%;
-}
-
-.notice {
-  list-style: none;
+  background-color: #4b4b4b;
+  border-radius: 25px;
+  padding: 8px 16px;
   display: flex;
-  flex-direction: row;
   justify-content: center;
   align-items: center;
-  width: 100%;
+  box-shadow: 0 12px 10px 1px rgba(134, 134, 134, 0.685);
 }
-.pen {
-  border-bottom: 1px solid #999;
-  border-right: 2px solid #ffffff;
-  border-top: 2px solid #ffffff;
+.content2 {
+  width: 100%;
+  background-color: #4b4b4b;
+  border-radius: 25px;
+  padding: 8px 16px;
   display: flex;
   justify-content: center;
-  /* border: solid 1px gray; */
+  align-items: center;
+  box-shadow: 0 12px 10px 1px rgba(134, 134, 134, 0.685);
 }
-.pen:last-child {
-  border-right: none;
-}
-.pen1 {
-  width: 10%;
-}
-.pen2 {
-  width: 50%;
-}
-.pen3 {
-  width: 10%;
-}
-.pen4 {
-  width: 10%;
-}
-.pen5 {
-  width: 10%;
-}
-.page {
+.main_content {
   display: flex;
-  width: 30%;
-  justify-content: space-between;
+  width: 100%;
+  padding: 16px;
 }
-.page button {
-  border-radius: 8px;
-}
-.page button:hover {
-  background-color: red;
+.main_content_inn {
+  width: 100%;
+  background-color: #4b4b4b;
+  border-radius: 25px;
+  padding: 8px 16px;
+  /* margin-top: 10px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 12px 10px 1px rgba(134, 134, 134, 0.685);
 }
 /* 메인 종료 */
 
@@ -380,17 +284,22 @@ li {
   border-radius: 5% 5% 0 0;
 }
 
+.footer_homePage {
+  font-weight: 700;
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+}
+
 .footer_top {
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 24px 32px;
   border-bottom: 2px solid gray;
-  color: #212212;
-}
-
-.footer_homePage {
-  font-weight: 700;
+  color: #222;
 }
 
 .day {
@@ -418,17 +327,12 @@ li {
   flex-direction: column;
   justify-content: center;
   padding: 24px 32px 24px 32px;
-  color: #212212;
+  color: #222;
   gap: 15px;
 }
 
-.logo {
-  width: 100px;
-  height: 100px;
-}
-
 .footer_bottom a {
-  color: #212212;
+  color: #222;
 }
 
 .site_address {
@@ -487,7 +391,7 @@ li {
   }
 
   .navigation.active .hamburger-button span {
-    background-color: #212212;
+    background-color: #222;
   }
 
   .navigation.active .hamburger-button.active span {

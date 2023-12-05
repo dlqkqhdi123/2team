@@ -111,12 +111,12 @@ li {
 
 /* 사이드 좌측 바 */
 .sideLeftBar {
-  width: 250px;
+  width: 200px;
   padding: 30px;
   background-color: #f2c301;
   color: #212212;
   position: sticky;
-  border-radius: 10rem;
+  border-radius: 16px;
   text-align: center;
   top: 120px; /* 지정된 위치 */
 }

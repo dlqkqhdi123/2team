@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="../../resources/css/nav.css" />
     <link rel="stylesheet" href="../../resources/css/member.css" />
     <link rel="stylesheet" href="../../resources/css/myPage.css" />
+    <link rel="icon" href="../../resources/img/사이트 파비콘.png" />
     <!-- 제작할 페이지의 CSS 링크 -->
   </head>
   <body>
@@ -36,23 +37,25 @@
           </div>
           <ul class="gnb">
             <li class="gmain">
-              <a href="">
+              <a href="../당신을위한/html_login.html">
                 <div class="item">당신을 위한</div>
               </a>
               <ul class="gsub">
-                <li><a href="">HTML</a></li>
-                <li><a href="">CSS</a></li>
-                <li><a href="">JavaScript</a></li>
+                <li><a href="../당신을위한/html_login.html">HTML</a></li>
+                <li><a href="../당신을위한/css_for_you_login.html">CSS</a></li>
+                <li>
+                  <a href="../당신을위한/Javascript_login.html">JavaScript</a>
+                </li>
               </ul>
             </li>
             <li class="gmain">
-              <a href="">
+              <a href="../디자인/design-color_login.html">
                 <div class="item">디자인</div>
               </a>
               <ul class="gsub">
-                <li><a href="../디자인/design-color.html">Color</a></li>
-                <li><a href="../디자인/design-font.html">Font</a></li>
-                <li><a href="../디자인/design-icon.html">Icon </a></li>
+                <li><a href="../디자인/design-color_login.html">Color</a></li>
+                <li><a href="../디자인/design-font_login.html">Font</a></li>
+                <li><a href="../디자인/design-icon_login.html">Icon </a></li>
               </ul>
             </li>
             <li class="gmain">
@@ -61,7 +64,7 @@
               </a>
             </li>
             <li class="gmain">
-              <a href="">
+              <a href="../예제/example_login.html">
                 <div class="item">예제</div>
               </a>
             </li>
@@ -158,6 +161,9 @@
                   </em>
                   <div class="ok hidden">사용가능한 아이디입니다.</div>
                   <div class="notOk hidden">사용 불가능한 아이디입니다.</div>
+                  <div class="nono hidden" style="color: red">
+                    중복된 아이디입니다.
+                  </div>
                 </td>
               </tr>
               <tr>
@@ -268,11 +274,7 @@
                       <span id="remaining_min">3</span> :
                       <span id="remaining_sec">00</span>
                     </span>
-                    <button
-                      class="complete_target"
-                      id="complete"
-                      onclick="checked()"
-                    >
+                    <button class="complete_target" id="complete">
                       인증완료
                     </button>
                   </div>
@@ -315,14 +317,6 @@
               <input type="submit" value="수정하기" class="subBtn" />
               <a href="../../index_login.html" class="back">메인으로</a>
             </div>
-            <div class="right-btn">
-              <input
-                type="submit"
-                value="회원탈퇴"
-                class="subBtn"
-                id="deleteBtn"
-              />
-            </div>
           </div>
         </div>
       </div>
@@ -361,6 +355,7 @@
   </body>
   <script src="../../resources/js/nav.js"></script>
   <script src="../../resources/js/member.js"></script>
+  <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
   <!-- 제작할 페이지의 스크립트 -->
   <script>
     function sample6_execDaumPostcode() {
