@@ -97,6 +97,7 @@ table td {
   border-radius: 8px;
   width: 100%;
   padding: 32px;
+  cursor: pointer;
 }
 .foryou-lg-content-item h2 {
   color: #fff;
