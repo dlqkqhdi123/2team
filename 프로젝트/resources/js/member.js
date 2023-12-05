@@ -103,24 +103,23 @@ function takeTarget() {
 }
 
 // 인증완료 버튼
-function checked() {
-  completeBtn.addEventListener("click", () => {
-    if (numberInput.value == "") {
-      alert("인증번호를 입력해주세요.");
-    } else if (numberInput.value.length < 6) {
-      alert("인증번호를 다시 입력해주세요.");
-      numberInput.value = "";
-    } else {
-      alert("인증완료되었습니다.");
-      completeBtn.disabled = true;
+
+completeBtn.addEventListener("click", () => {
+  if (numberInput.value == "") {
+    alert("인증번호를 입력해주세요.");
+  } else if (numberInput.value.length < 6) {
+    alert("인증번호를 다시 입력해주세요.");
+    numberInput.value = "";
+  } else {
+    alert("인증완료되었습니다.");
+    completeBtn.disabled = true;
+    clearInterval(timeId);
+    if ((completeBtn.disabled = true)) {
+      completeBtn.classList.add("disabled");
       clearInterval(timeId);
-      if ((completeBtn.disabled = true)) {
-        completeBtn.classList.add("disabled");
-        clearInterval(timeId);
-      }
     }
-  });
-}
+  }
+});
 
 // 회원가입
 // function submitCheck() {

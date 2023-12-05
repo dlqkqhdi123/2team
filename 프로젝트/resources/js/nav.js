@@ -60,3 +60,5 @@ function log_out_cancle() {
   modal.style.display = "none";
   stop.classList.remove("break");
 }
+
+console.log("%cദ്ദി❁´ω`❁)", "color: #4082ed;font-size:24px;font-weight:700;");
