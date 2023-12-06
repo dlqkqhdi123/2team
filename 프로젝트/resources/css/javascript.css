@@ -14,14 +14,14 @@ main {
   margin-bottom: 20px;
 }
 
-.head_continer {
+.head_container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   width: 100%;
 }
 
 .head_list {
-  width: 15%;
+  width: 25%;
   gap: 8px;
   border: 1px solid #f2c301;
   border-radius: 8px;
@@ -176,6 +176,7 @@ table td {
 
   .head_list {
     margin-left: 15%;
+    width: 30%;
   }
 
   .intro_tb {

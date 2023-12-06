@@ -32,6 +32,15 @@ hambugerBtn.addEventListener("click", function () {
   }
 });
 
+const mainMenu = document.querySelectorAll(".gmain");
+const subMenu = document.querySelectorAll(".gsub");
+mainMenu.forEach((e) => {
+  e.addEventListener("click", function () {
+    subMenu.forEach((i) => {
+      i.classList.toggle("show");
+    });
+  });
+});
 // 로그아웃
 const stop = document.querySelector("body");
 const logOut = document.querySelector("#log-out");

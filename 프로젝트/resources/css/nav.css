@@ -410,6 +410,16 @@ footer {
     display: none;
   }
 
+  .gmain:hover .gsub.show {
+    display: block;
+    top: 70%;
+  }
+
+  .gnb.vh:hover .gsub a {
+    color: #212212;
+    font-size: 12px;
+  }
+
   .navigation.active .log-out {
     color: #fff;
   }

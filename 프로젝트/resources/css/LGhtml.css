@@ -10,9 +10,9 @@
   margin-bottom: 20px;
 }
 
-.head_continer {
+.head_container {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .head_list {
